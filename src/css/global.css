@@ -1,0 +1,142 @@
+/*Open Sans font*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Open Sans", "Roboto", sans-serif;
+	scroll-behavior: smooth;
+	font-size: 62.5%;
+}
+
+body {
+	padding: 1rem 5rem 0 5rem;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	overflow-x: hidden;
+}
+
+h1,
+h2 {
+	text-align: center;
+}
+
+h1 {
+	font-size: 4.8rem;
+}
+
+h2 {
+	font-size: 3.6rem;
+	margin: 30px 0px; 
+}
+
+a {
+	text-decoration: none;
+}
+
+p {
+	line-height: 2.2rem;
+	text-align: justify;
+}
+
+/* adicionar responsividade quando o texto do paragrafo estiver pronto*/
+
+.topico {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	gap: 30px;
+	font-size: 2.4rem;
+	margin-bottom: 30px;
+}
+
+.topico-vertical {
+	display: flex;
+	flex-direction: row;
+	max-width: 100%;
+	overflow-x: scroll;
+	gap: 30px;
+	font-size: 2.4rem;
+	margin-bottom: 30px;
+}
+
+.img_texto {
+	display: flex;
+	gap: inherit;
+	font-size: inherit;
+}
+
+@media screen and (max-width: 1132px) {
+	.topico .img_texto {
+		align-items: center;
+		flex-direction: column;
+	}
+}
+
+.img_texto_vertical {
+	display: flex;
+	flex-flow: column;
+	max-width: 360px;
+	gap: inherit;
+	font-size: inherit;
+}
+
+.imagem {
+	width: 360px;
+	height: 220px;
+	aspect-ratio: 360/220;
+}
+
+.timeline {
+	width: 100%;
+}
+
+.timeline-itens {
+	display: flex;
+	justify-content: center;
+	gap: 15px;
+	font-size: 3.6rem;
+	margin-bottom: 45px; /* espaçamento padrão + text_underline_offset*/
+}
+
+.timeline-itens span {
+	cursor: pointer;
+	transition: ease-in-out .5s;
+}
+
+.timeline-itens span:hover {
+	color: #ff0606;
+}
+
+.timeline-itens .selected {
+	color: #ff0606;
+	text-decoration: underline;
+	text-underline-offset: 15px;
+}
+
+@keyframes timeline-content-animation {
+	0% {
+		transform: translateX(110%);
+		color: rgba(0, 0, 0, 0)
+	}
+	60% {
+		transform: translateX(0);
+		color: rgba(0, 0, 0, 0)
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+.timeline-content {
+	display: none;
+	animation: timeline-content-animation 1.5s ease-in-out forwards;
+} 
+
+.timeline-content.selected {
+	display: block;
+	transform: translateX(0);
+	transition: ease-in-out .8s
+}
