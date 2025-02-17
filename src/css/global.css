@@ -54,9 +54,8 @@ p {
 
 .topico-vertical {
 	display: flex;
-	flex-direction: row;
-	max-width: 100%;
-	overflow-x: scroll;
+	width: 100%;
+	overflow-x: auto;
 	gap: 30px;
 	font-size: 2.4rem;
 	margin-bottom: 30px;
@@ -83,10 +82,16 @@ p {
 	font-size: inherit;
 }
 
-.imagem {
+.imagem-grande {
 	width: 360px;
 	height: 220px;
 	aspect-ratio: 360/220;
+}
+
+.imagem-pequena {
+	width: 286px;
+	height: 175px;
+	aspect-ratio: 286/175;
 }
 
 .timeline {
@@ -139,4 +144,48 @@ p {
 	display: block;
 	transform: translateX(0);
 	transition: ease-in-out .8s
+}
+
+.card-grid {
+	display: grid;
+	grid-template-columns: min-content min-content min-content;
+	justify-content: center;
+	gap: 45px;
+}
+
+.card {
+	border: 2px solid #aaa;
+	border-radius: 10px;
+	font-size: inherit;
+	max-width: max-content;
+}
+
+.card > img {
+	width: 286px;
+	height: 175px;
+	aspect-ratio: 286/175;
+	border-top-left-radius: inherit;
+	border-top-right-radius: inherit;
+}
+
+.card > .content {
+	font-size: inherit;
+	padding: 5px;
+}
+
+.card > .content .card-title {
+	font-weight: 700;
+	font-size: 1.8rem;
+}
+
+@media screen and (max-width: 1070px) {
+	.card-grid {
+		grid-template-columns: min-content min-content;
+	}
+}
+
+@media screen and (max-width: 740px) {
+	.card-grid {
+		grid-template-columns: min-content;
+	}
 }
