@@ -1,6 +1,26 @@
 /*Open Sans font*/
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
+:root {
+	--cor-texto-primaria: #ffffff;
+	--cor-texto-secundaria: #ccaa21;
+	--cor-texto-transicao: #4f410a;
+}
+
+h1,
+h2,
+h3 {
+	color: var(--cor-texto-secundaria);
+}
+
+p {
+	color: var(--cor-texto-primaria);
+}
+
+span {
+	color: var(--cor-texto-transicao);
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -8,6 +28,7 @@
 	font-family: "Open Sans", "Roboto", sans-serif;
 	scroll-behavior: smooth;
 	font-size: 62.5%;
+	background-color: #1a1919;
 }
 
 body {
@@ -29,7 +50,7 @@ h1 {
 
 h2 {
 	font-size: 3.6rem;
-	margin: 30px 0px; 
+	margin: 30px 0px;
 }
 
 a {
@@ -85,13 +106,13 @@ p {
 .imagem-grande {
 	width: 360px;
 	height: 220px;
-	aspect-ratio: 360/220;
+	aspect-ratio: 360 / 220;
 }
 
 .imagem-pequena {
 	width: 286px;
 	height: 175px;
-	aspect-ratio: 286/175;
+	aspect-ratio: 286 / 175;
 }
 
 .timeline {
@@ -112,11 +133,11 @@ p {
 }
 
 .timeline-itens span:hover {
-	color: #ff0606;
+	color: #ccaa21;
 }
 
 .timeline-itens .selected {
-	color: #ff0606;
+	color: #ccaa21;
 	text-decoration: underline;
 	text-underline-offset: 15px;
 }
@@ -124,11 +145,11 @@ p {
 @keyframes timeline-content-animation {
 	0% {
 		transform: translateX(110%);
-		color: rgba(0, 0, 0, 0)
+		color: #806a12;
 	}
 	60% {
 		transform: translateX(0);
-		color: rgba(0, 0, 0, 0)
+		color: #806a12;
 	}
 	100% {
 		transform: translateX(0);
@@ -138,12 +159,12 @@ p {
 .timeline-content {
 	display: none;
 	animation: timeline-content-animation 1.5s ease-in-out forwards;
-} 
+}
 
 .timeline-content.selected {
 	display: block;
 	transform: translateX(0);
-	transition: ease-in-out .8s
+	transition: ease-in-out .8s;
 }
 
 .card-grid {
@@ -163,7 +184,7 @@ p {
 .card > img {
 	width: 286px;
 	height: 175px;
-	aspect-ratio: 286/175;
+	aspect-ratio: 286 / 175;
 	border-top-left-radius: inherit;
 	border-top-right-radius: inherit;
 }
@@ -171,6 +192,7 @@ p {
 .card > .content {
 	font-size: inherit;
 	padding: 5px;
+	border-radius: inherit
 }
 
 .card > .content .card-title {
