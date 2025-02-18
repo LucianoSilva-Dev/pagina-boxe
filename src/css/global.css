@@ -143,27 +143,23 @@ p {
 }
 
 @keyframes timeline-content-animation {
-	0% {
-		transform: translateX(110%);
-		color: #806a12;
+	from {
+		opacity: 0;
+		transform: translateX(100%);
 	}
-	60% {
-		transform: translateX(0);
-		color: #806a12;
-	}
-	100% {
+	to {
+		opacity: 1;
 		transform: translateX(0);
 	}
 }
 
 .timeline-content {
 	display: none;
-	animation: timeline-content-animation 1.5s ease-in-out forwards;
+	animation: timeline-content-animation 1s ease-out forwards;
 }
 
 .timeline-content.selected {
 	display: block;
-	transform: translateX(0);
 	transition: ease-in-out .8s;
 }
 
@@ -209,5 +205,24 @@ p {
 @media screen and (max-width: 740px) {
 	.card-grid {
 		grid-template-columns: min-content;
+	}
+}
+
+/* Responsividade adicional para dispositivos moveis */
+@media screen and (max-width: 480px) {
+	body {
+		padding: 1rem 2rem 0 2rem;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.imagem-grande {
+		width: 320px;
+		height: 195px;
+		aspect-ratio: 320 / 195;
+	}
+	.timeline-itens {
+		font-size: 3.2rem;
+		gap: 10px;
 	}
 }
